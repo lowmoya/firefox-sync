@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"name": "Sync",
+	"version": "1.0",
+	"description": "Video-syncer",
+	"browser_action": {
+		"default_title": "Sync",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["service.js"],
+		"persistent": true
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.hulu.com/*"],
+			"js": ["content.js"]
+		}
+	]
+}
